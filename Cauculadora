@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o primeiro número inteiro: ");
+        int numero1 = scanner.nextInt();
+
+        System.out.print("Digite o segundo número inteiro: ");
+        int numero2 = scanner.nextInt();
+
+        System.out.println("Escolha uma das opções:");
+        System.out.println("1 - Multiplicar os números");
+        System.out.println("2 - Dividir o primeiro número pelo segundo");
+        System.out.println("3 - Subtrair o segundo número do primeiro");
+        System.out.print("Digite a opção desejada (1, 2 ou 3): ");
+        int opcao = scanner.nextInt();
+
+        double resultado = 0;
+
+        switch (opcao) {
+            case 1:
+                resultado = numero1 * numero2;
+                System.out.println("A multiplicação dos números é: " + resultado);
+                break;
+
+            case 2:
+                if (numero2 == 0) {
+
+                    System.out.println("Erro: Divisão por zero não é permitida.");
+                } else {
+                    resultado = (double) numero1 / numero2;
+                    System.out.println("A divisão do primeiro número pelo segundo é: " + resultado);
+                }
+                break;
+
+            case 3:
+                resultado = numero1 - numero2;
+                System.out.println("A subtração do segundo número do primeiro é: " + resultado);
+                break;
+
+            default:
+                System.out.println("Opção inválida. Por favor, escolha 1, 2 ou 3.");
+                break;
+        }
+
+        scanner.close();
+    }
+}
